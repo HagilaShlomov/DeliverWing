@@ -1,0 +1,12 @@
+{
+    "altitude": -9.255963134931783e+61,
+    "humidity": "78",
+    "latitude": 31.954887054504507,
+    "longitude": 34.812622732585346,
+    "pressure": "1010.000000",
+    "temperature": "21.300000",
+    "weatherDescription": "Partly cloudy",
+    "windDirection": "SSW",
+    "windGust": "18.300000",
+    "windSpeed": "11.500000"
+}

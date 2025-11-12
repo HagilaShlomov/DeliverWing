@@ -1,0 +1,24 @@
+{
+    "altitude": -9.255963134931783e+61,
+    "humidity": "78",
+    "latitude": 31.9521843518018,
+    "longitude": 34.791387149719505,
+    "pressure": "1010.000000",
+    "temperature": "21.300000",
+    "weatherDescription": "Partly cloudy",
+    "windDirection": "SSW",
+    "windGust": "18.300000",
+    "windSpeed": "11.500000"
+}
+{
+    "altitude": -9.255963134931783e+61,
+    "humidity": "52",
+    "latitude": 31.954108579674653,
+    "longitude": 34.82865099508942,
+    "pressure": "1008.000000",
+    "temperature": "29.100000",
+    "weatherDescription": "Sunny",
+    "windDirection": "W",
+    "windGust": "18.600000",
+    "windSpeed": "16.200000"
+}

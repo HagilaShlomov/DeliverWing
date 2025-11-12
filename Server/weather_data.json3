@@ -1,0 +1,384 @@
+{
+    "altitude": -9.255963134931783e+61,
+    "humidity": "78",
+    "latitude": 31.950382549999997,
+    "longitude": 34.780769358286584,
+    "pressure": "1010.000000",
+    "temperature": "21.300000",
+    "weatherDescription": "Partly cloudy",
+    "windDirection": "SSW",
+    "windGust": "18.300000",
+    "windSpeed": "11.500000"
+}
+{
+    "altitude": -9.255963134931783e+61,
+    "humidity": "73",
+    "latitude": 31.9526021,
+    "longitude": 34.823246058286585,
+    "pressure": "1010.000000",
+    "temperature": "21.200000",
+    "weatherDescription": "Partly cloudy",
+    "windDirection": "S",
+    "windGust": "15.600000",
+    "windSpeed": "9.400000"
+}
+{
+    "altitude": -9.255963134931783e+61,
+    "humidity": "73",
+    "latitude": 31.9529294,
+    "longitude": 34.82816320828658,
+    "pressure": "1009.000000",
+    "temperature": "21.300000",
+    "weatherDescription": "Partly cloudy",
+    "windDirection": "S",
+    "windGust": "15.600000",
+    "windSpeed": "9.400000"
+}
+{
+    "altitude": -9.255963134931783e+61,
+    "humidity": "73",
+    "latitude": 31.9529294,
+    "longitude": 34.82816320828658,
+    "pressure": "1009.000000",
+    "temperature": "21.300000",
+    "weatherDescription": "Partly cloudy",
+    "windDirection": "S",
+    "windGust": "15.600000",
+    "windSpeed": "9.400000"
+}
+{
+    "altitude": -9.255963134931783e+61,
+    "humidity": "65",
+    "latitude": 31.9529294,
+    "longitude": 34.82816320828658,
+    "pressure": "1011.000000",
+    "temperature": "25.400000",
+    "weatherDescription": "Partly cloudy",
+    "windDirection": "WSW",
+    "windGust": "11.200000",
+    "windSpeed": "9.700000"
+}
+{
+    "altitude": -9.255963134931783e+61,
+    "humidity": "58",
+    "latitude": 31.9529294,
+    "longitude": 34.82816320828658,
+    "pressure": "1010.000000",
+    "temperature": "27.100000",
+    "weatherDescription": "Sunny",
+    "windDirection": "W",
+    "windGust": "19.000000",
+    "windSpeed": "16.600000"
+}
+{
+    "altitude": -9.255963134931783e+61,
+    "humidity": "45",
+    "latitude": 31.9529294,
+    "longitude": 34.82816320828658,
+    "pressure": "1010.000000",
+    "temperature": "29.000000",
+    "weatherDescription": "Sunny",
+    "windDirection": "W",
+    "windGust": "19.900000",
+    "windSpeed": "17.300000"
+}
+{
+    "altitude": -9.255963134931783e+61,
+    "humidity": "58",
+    "latitude": 31.953276402998732,
+    "longitude": 34.827901522768684,
+    "pressure": "1008.000000",
+    "temperature": "28.000000",
+    "weatherDescription": "Sunny",
+    "windDirection": "WNW",
+    "windGust": "17.900000",
+    "windSpeed": "15.500000"
+}
+{
+    "altitude": -9.255963134931783e+61,
+    "humidity": "58",
+    "latitude": 31.953276402998732,
+    "longitude": 34.827901522768684,
+    "pressure": "1008.000000",
+    "temperature": "28.000000",
+    "weatherDescription": "Sunny",
+    "windDirection": "WNW",
+    "windGust": "17.900000",
+    "windSpeed": "15.500000"
+}
+{
+    "altitude": -9.255963134931783e+61,
+    "humidity": "58",
+    "latitude": 31.953276402998732,
+    "longitude": 34.827901522768684,
+    "pressure": "1008.000000",
+    "temperature": "28.100000",
+    "weatherDescription": "Sunny",
+    "windDirection": "WNW",
+    "windGust": "15.700000",
+    "windSpeed": "13.700000"
+}
+{
+    "altitude": -9.255963134931783e+61,
+    "humidity": "58",
+    "latitude": 31.953276402998732,
+    "longitude": 34.827901522768684,
+    "pressure": "1008.000000",
+    "temperature": "28.400000",
+    "weatherDescription": "Sunny",
+    "windDirection": "NW",
+    "windGust": "16.400000",
+    "windSpeed": "13.300000"
+}
+{
+    "altitude": -9.255963134931783e+61,
+    "humidity": "58",
+    "latitude": 31.953276402998732,
+    "longitude": 34.827901522768684,
+    "pressure": "1008.000000",
+    "temperature": "28.400000",
+    "weatherDescription": "Sunny",
+    "windDirection": "NW",
+    "windGust": "16.400000",
+    "windSpeed": "13.300000"
+}
+{
+    "altitude": -9.255963134931783e+61,
+    "humidity": "83",
+    "latitude": 31.953013,
+    "longitude": 34.82828755828658,
+    "pressure": "1009.000000",
+    "temperature": "23.200000",
+    "weatherDescription": "Partly cloudy",
+    "windDirection": "SW",
+    "windGust": "8.100000",
+    "windSpeed": "5.000000"
+}
+{
+    "altitude": -9.255963134931783e+61,
+    "humidity": "52",
+    "latitude": 31.954108579674653,
+    "longitude": 34.82865099508938,
+    "pressure": "1008.000000",
+    "temperature": "29.100000",
+    "weatherDescription": "Sunny",
+    "windDirection": "W",
+    "windGust": "18.600000",
+    "windSpeed": "16.200000"
+}
+{
+    "altitude": -9.255963134931783e+61,
+    "humidity": "52",
+    "latitude": 31.954108579674653,
+    "longitude": 34.82865099508938,
+    "pressure": "1008.000000",
+    "temperature": "29.100000",
+    "weatherDescription": "Sunny",
+    "windDirection": "W",
+    "windGust": "18.600000",
+    "windSpeed": "16.200000"
+}
+{
+    "altitude": -9.255963134931783e+61,
+    "humidity": "58",
+    "latitude": 31.955008,
+    "longitude": 34.809297,
+    "pressure": "1007.000000",
+    "temperature": "29.300000",
+    "weatherDescription": "Sunny",
+    "windDirection": "WNW",
+    "windGust": "19.000000",
+    "windSpeed": "16.600000"
+}
+{
+    "altitude": -9.255963134931783e+61,
+    "humidity": "58",
+    "latitude": 31.955008,
+    "longitude": 34.809297,
+    "pressure": "1007.000000",
+    "temperature": "29.300000",
+    "weatherDescription": "Sunny",
+    "windDirection": "WNW",
+    "windGust": "19.000000",
+    "windSpeed": "16.600000"
+}
+{
+    "altitude": -9.255963134931783e+61,
+    "humidity": "58",
+    "latitude": 31.95329185,
+    "longitude": 34.77126545440798,
+    "pressure": "1007.000000",
+    "temperature": "29.000000",
+    "weatherDescription": "Sunny",
+    "windDirection": "WNW",
+    "windGust": "18.200000",
+    "windSpeed": "15.800000"
+}
+{
+    "altitude": -9.255963134931783e+61,
+    "humidity": "58",
+    "latitude": 31.95329185,
+    "longitude": 34.77126545440798,
+    "pressure": "1007.000000",
+    "temperature": "29.000000",
+    "weatherDescription": "Sunny",
+    "windDirection": "WNW",
+    "windGust": "18.200000",
+    "windSpeed": "15.800000"
+}
+{
+    "altitude": -9.255963134931783e+61,
+    "humidity": "58",
+    "latitude": 31.95329185,
+    "longitude": 34.77126545440798,
+    "pressure": "1007.000000",
+    "temperature": "29.000000",
+    "weatherDescription": "Sunny",
+    "windDirection": "WNW",
+    "windGust": "18.200000",
+    "windSpeed": "15.800000"
+}
+{
+    "altitude": -9.255963134931783e+61,
+    "humidity": "58",
+    "latitude": 31.95329185,
+    "longitude": 34.77126545440798,
+    "pressure": "1007.000000",
+    "temperature": "29.000000",
+    "weatherDescription": "Sunny",
+    "windDirection": "WNW",
+    "windGust": "18.200000",
+    "windSpeed": "15.800000"
+}
+{
+    "altitude": -9.255963134931783e+61,
+    "humidity": "58",
+    "latitude": 31.95329185,
+    "longitude": 34.77126545440798,
+    "pressure": "1007.000000",
+    "temperature": "29.000000",
+    "weatherDescription": "Sunny",
+    "windDirection": "WNW",
+    "windGust": "18.200000",
+    "windSpeed": "15.800000"
+}
+{
+    "altitude": -9.255963134931783e+61,
+    "humidity": "58",
+    "latitude": 32.311401599999996,
+    "longitude": 34.85214600777683,
+    "pressure": "1007.000000",
+    "temperature": "29.300000",
+    "weatherDescription": "Sunny",
+    "windDirection": "WNW",
+    "windGust": "18.200000",
+    "windSpeed": "15.800000"
+}
+{
+    "altitude": -9.255963134931783e+61,
+    "humidity": "58",
+    "latitude": 32.311401599999996,
+    "longitude": 34.85214600777683,
+    "pressure": "1007.000000",
+    "temperature": "29.300000",
+    "weatherDescription": "Sunny",
+    "windDirection": "WNW",
+    "windGust": "18.200000",
+    "windSpeed": "15.800000"
+}
+{
+    "altitude": -9.255963134931783e+61,
+    "humidity": "58",
+    "latitude": 32.311401599999996,
+    "longitude": 34.85214600777683,
+    "pressure": "1007.000000",
+    "temperature": "29.300000",
+    "weatherDescription": "Sunny",
+    "windDirection": "WNW",
+    "windGust": "18.200000",
+    "windSpeed": "15.800000"
+}
+{
+    "altitude": -9.255963134931783e+61,
+    "humidity": "58",
+    "latitude": 32.311401599999996,
+    "longitude": 34.85214600777683,
+    "pressure": "1007.000000",
+    "temperature": "29.300000",
+    "weatherDescription": "Sunny",
+    "windDirection": "WNW",
+    "windGust": "18.200000",
+    "windSpeed": "15.800000"
+}
+{
+    "altitude": -9.255963134931783e+61,
+    "humidity": "58",
+    "latitude": 32.323332750000006,
+    "longitude": 34.85219555777683,
+    "pressure": "1007.000000",
+    "temperature": "29.300000",
+    "weatherDescription": "Sunny",
+    "windDirection": "WNW",
+    "windGust": "18.200000",
+    "windSpeed": "15.800000"
+}
+{
+    "altitude": -9.255963134931783e+61,
+    "humidity": "58",
+    "latitude": 32.323332750000006,
+    "longitude": 34.85219555777683,
+    "pressure": "1007.000000",
+    "temperature": "29.300000",
+    "weatherDescription": "Sunny",
+    "windDirection": "WNW",
+    "windGust": "18.200000",
+    "windSpeed": "15.800000"
+}
+{
+    "altitude": -9.255963134931783e+61,
+    "humidity": "58",
+    "latitude": 32.323332750000006,
+    "longitude": 34.85219555777683,
+    "pressure": "1007.000000",
+    "temperature": "29.300000",
+    "weatherDescription": "Sunny",
+    "windDirection": "WNW",
+    "windGust": "18.200000",
+    "windSpeed": "15.800000"
+}
+{
+    "altitude": -9.255963134931783e+61,
+    "humidity": "58",
+    "latitude": 32.323332750000006,
+    "longitude": 34.85219555777683,
+    "pressure": "1007.000000",
+    "temperature": "29.300000",
+    "weatherDescription": "Sunny",
+    "windDirection": "WNW",
+    "windGust": "18.200000",
+    "windSpeed": "15.800000"
+}
+{
+    "altitude": -9.255963134931783e+61,
+    "humidity": "58",
+    "latitude": 32.323332750000006,
+    "longitude": 34.85219555777683,
+    "pressure": "1007.000000",
+    "temperature": "29.300000",
+    "weatherDescription": "Sunny",
+    "windDirection": "WNW",
+    "windGust": "18.200000",
+    "windSpeed": "15.800000"
+}
+{
+    "altitude": -9.255963134931783e+61,
+    "humidity": "58",
+    "latitude": 32.323332750000006,
+    "longitude": 34.85219555777683,
+    "pressure": "1007.000000",
+    "temperature": "29.300000",
+    "weatherDescription": "Sunny",
+    "windDirection": "WNW",
+    "windGust": "18.200000",
+    "windSpeed": "15.800000"
+}

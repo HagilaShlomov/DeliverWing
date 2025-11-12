@@ -13,10 +13,177 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\BL">
+      <UniqueIdentifier>{e9827bcd-e9af-4442-8f0e-0ca6b178d708}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BL\SensorsClass">
+      <UniqueIdentifier>{ff3cc2d3-57e2-4089-897c-9265f944cd7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Sensors Header Files">
+      <UniqueIdentifier>{cf4310dc-c42e-48c1-aeb1-08ea7ddaba2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BL\Data Structures">
+      <UniqueIdentifier>{b163d27c-8c6f-48d4-83ca-82dec5140727}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Communication">
+      <UniqueIdentifier>{b5dc0cbb-9c3b-49de-87aa-8511fe04e29e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Services">
+      <UniqueIdentifier>{91beb4bd-960e-4b48-8c85-f1039b9c6739}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\BL\Algorithm">
+      <UniqueIdentifier>{385f0fc0-af2b-4da5-b585-2b92d5a27e05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Data Structures Header files">
+      <UniqueIdentifier>{473ffe49-8db7-4e3e-95af-5301b9742e07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DAL">
+      <UniqueIdentifier>{c1fb864e-447d-4578-aa6f-21bdfa390698}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Services\assets">
+      <UniqueIdentifier>{9edcbce9-b5b2-44c5-80f5-c92dc20be338}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GUI">
+      <UniqueIdentifier>{254a7900-2668-4b58-b86b-dc02a4ccd488}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Server.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Accelerometer.cpp">
+      <Filter>Source Files\BL\SensorsClass</Filter>
     </ClCompile>
+    <ClCompile Include="Sensors.cpp">
+      <Filter>Source Files\BL\SensorsClass</Filter>
+    </ClCompile>
+    <ClCompile Include="Barometer.cpp">
+      <Filter>Source Files\BL\SensorsClass</Filter>
+    </ClCompile>
+    <ClCompile Include="LiDar.cpp">
+      <Filter>Source Files\BL\SensorsClass</Filter>
+    </ClCompile>
+    <ClCompile Include="DataStructures.cpp">
+      <Filter>Source Files\BL</Filter>
+    </ClCompile>
+    <ClCompile Include="Server.cpp">
+      <Filter>Source Files\Communication</Filter>
+    </ClCompile>
+    <ClCompile Include="Weather.cpp">
+      <Filter>Source Files\Services</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>Source Files\Services</Filter>
+    </ClCompile>
+    <ClCompile Include="Coordinate.cpp">
+      <Filter>Source Files\BL\Data Structures</Filter>
+    </ClCompile>
+    <ClCompile Include="InitGraph.cpp">
+      <Filter>Source Files\BL\Data Structures</Filter>
+    </ClCompile>
+    <ClCompile Include="Node.cpp">
+      <Filter>Source Files\BL\Data Structures</Filter>
+    </ClCompile>
+    <ClCompile Include="Battery.cpp">
+      <Filter>Source Files\BL</Filter>
+    </ClCompile>
+    <ClCompile Include="DB_connection.cpp">
+      <Filter>Source Files\DAL</Filter>
+    </ClCompile>
+    <ClCompile Include="User.cpp">
+      <Filter>Source Files\DAL</Filter>
+    </ClCompile>
+    <ClCompile Include="Order.cpp">
+      <Filter>Source Files\DAL</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DataStructures.h">
+      <Filter>Source Files\BL</Filter>
+    </ClInclude>
+    <ClInclude Include="Accelerometer.h">
+      <Filter>Header Files\Sensors Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Barometer.h">
+      <Filter>Header Files\Sensors Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Sensors.h">
+      <Filter>Header Files\Sensors Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LiDar.h">
+      <Filter>Header Files\Sensors Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Server.h">
+      <Filter>Source Files\Communication</Filter>
+    </ClInclude>
+    <ClInclude Include="Weather.h">
+      <Filter>Source Files\Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Source Files\Services</Filter>
+    </ClInclude>
+    <ClInclude Include="Coordinate.h">
+      <Filter>Header Files\Data Structures Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="InitGraph.h">
+      <Filter>Header Files\Data Structures Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>Header Files\Data Structures Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="Battery.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Dijkstra.h">
+      <Filter>Source Files\BL\Algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="Floyd_Warshal.h">
+      <Filter>Source Files\BL\Algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="DB_connection.h">
+      <Filter>Source Files\DAL</Filter>
+    </ClInclude>
+    <ClInclude Include="CostCalculate.h">
+      <Filter>Source Files\BL\Algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="User.h">
+      <Filter>Source Files\DAL</Filter>
+    </ClInclude>
+    <ClInclude Include="Order.h">
+      <Filter>Source Files\DAL</Filter>
+    </ClInclude>
+    <ClInclude Include="Graph.h">
+      <Filter>Header Files\Data Structures Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="initAreaCoordinate.h">
+      <Filter>Source Files\Services</Filter>
+    </ClInclude>
+    <ClInclude Include="AStar.h">
+      <Filter>Source Files\BL\Algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="Simulation.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="HandleDinamic.h">
+      <Filter>Source Files\BL\Algorithm</Filter>
+    </ClInclude>
+    <ClInclude Include="bar.h">
+      <Filter>Header Files\Sensors Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="liD.h">
+      <Filter>Header Files\Sensors Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="sensorsAPI.h">
+      <Filter>Source Files\Services</Filter>
+    </ClInclude>
+    <ClInclude Include="clientAPI.h">
+      <Filter>Source Files\Services</Filter>
+    </ClInclude>
+    <ClInclude Include="runDrone.h">
+      <Filter>Source Files\BL</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="weatherjson.json">
+      <Filter>Source Files\Services\assets</Filter>
+    </None>
   </ItemGroup>
 </Project>
