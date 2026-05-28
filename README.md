@@ -150,9 +150,9 @@ Additional third-party bundles in the repository:
 
 ### Option 2: CMake
 
-1. Create a build directory in the repository root:
+1. Open a terminal in the repository root (or the folder containing the `CMakeLists.txt` file).
+2. Create a build directory and run CMake:
    ```powershell
-   cd "c:\Users\חגילה\Desktop\לימודים\פרויקט גמר\drone project\Server\Server"
    mkdir build
    cd build
    cmake ..
