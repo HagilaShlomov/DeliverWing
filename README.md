@@ -1,4 +1,4 @@
-# DeliverWing – Drone Delivery Simulation Server
+# DeliverWing – Drone Delivery Simulation
 
 ![DeliverWing](docs/deliverwing-cover.png)
 
@@ -8,11 +8,40 @@
 - **Real-time obstacle rerouting** – simulated LiDAR detects obstacles on the next leg; the blocked edge is removed from the graph and a new A* route is computed mid-flight (`HandleDinamic.h`)
 - **Building-aware altitude** – the drone climbs above buildings in its path with a safety margin
 - **Sensor simulation** – LiDAR, accelerometer, barometer and battery modules
-- **Live visualization** – the drone's position is streamed over sockets to a visualization client
+- **Live 3D visualization** – the drone's path, obstacles and buildings are streamed over UDP to a real-time Matplotlib 3D view
+
+## System Components
+
+| Component | Folder | Tech | Port | Role |
+|---|---|---|---|---|
+| Main server | `Server/` | C++ | 8080 (HTTP) | REST API, path planning, flight simulation |
+| Sensors server | `sensors server/` | Python, Flask | 5000 (HTTP) | Simulated LiDAR obstacles, buildings and barometer readings |
+| 3D visualization | `simulation/` | Python, Matplotlib | 14785 (UDP) | Live 3D view of the drone's path, obstacles and buildings |
+| DAL service | external | – | 8081 (HTTP) | Stores users and orders in MySQL |
+
+```
+Client ──HTTP──▶ C++ Server (8080) ──HTTP──▶ Sensors Server (5000)
+                     │    │
+                     │    └──HTTP──▶ DAL Service (8081) ──▶ MySQL
+                     └──UDP──▶ 3D Visualization (14785)
+```
+
+## Running the Python Components
+
+```bash
+cd "sensors server"
+pip install -r requirements.txt
+python app.py              # starts the sensors server on http://localhost:5000
+
+cd ../simulation
+python ShowGraph.py        # opens the live 3D view and listens on UDP 14785
+```
+
+Start both Python components before the C++ server so the flight can query sensors and stream its position.
 
 ## Overview
 
-This repository contains the server-side implementation for a drone delivery simulation project. The server is built in C++ and exposes a REST API for client login, order submission, path planning, weather retrieval, and integration with a database/DAL layer.
+The C++ server is the core of the project. It contains the server-side implementation for a drone delivery simulation project. The server is built in C++ and exposes a REST API for client login, order submission, path planning, weather retrieval, and integration with a database/DAL layer.
 
 The server uses `cpp-httplib` for HTTP handling, `nlohmann/json` for JSON parsing, `libcurl` for external weather requests, and MySQL connector logic to send user and order data to a DAL backend.
 

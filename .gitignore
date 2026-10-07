@@ -371,3 +371,7 @@ libxl-4.6.0/
 vcpkg/
 # httplib.h is already vendored in Server/
 cpp-httplib-master/
+
+# Python
+__pycache__/
+*.pyc
