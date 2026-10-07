@@ -112,13 +112,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\glad\include;C:\glfw-3.4.bin.WIN64\glfw-3.4.bin.WIN64\include;C:\SFML-2.6.2\include;C:\libraries\mysql-connector-c++-9.3.0-winx64\mysql-connector-c++-9.3.0-winx64\include;%(AdditionalIncludeDirectories);C:\Users\חגילה\Desktop\לימודים\פרויקט גמר\drone project\Server\Server\curl-8.13.0_3-win64-mingw\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\glad\include;C:\glfw-3.4.bin.WIN64\glfw-3.4.bin.WIN64\include;C:\SFML-2.6.2\include;C:\libraries\mysql-connector-c++-9.3.0-winx64\mysql-connector-c++-9.3.0-winx64\include;%(AdditionalIncludeDirectories);$(SolutionDir)curl-8.13.0_3-win64-mingw\include</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\glfw-3.4.bin.WIN64\glfw-3.4.bin.WIN64\lib-vc2022;C:\SFML-2.6.2\lib;C:\libraries\mysql-connector-c++-9.3.0-winx64\mysql-connector-c++-9.3.0-winx64\lib64\vs14;C:\Users\חגילה\Desktop\לימודים\פרויקט גמר\drone project\Server\Server\packages\libcurl-v143-shared.8.4.0\build\native\x64\v143\lib</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\glfw-3.4.bin.WIN64\glfw-3.4.bin.WIN64\lib-vc2022;C:\SFML-2.6.2\lib;C:\libraries\mysql-connector-c++-9.3.0-winx64\mysql-connector-c++-9.3.0-winx64\lib64\vs14;$(SolutionDir)packages\libcurl-v143-shared.8.4.0\build\native\x64\v143\lib</AdditionalLibraryDirectories>
       <AdditionalDependencies>opengl32.lib;glu32.lib;glfw3.lib;sfml-window.lib;sfml-system.lib;sfml-graphics.lib;sfml-graphics-s.lib;sfml-system-s.lib;sfml-window-s.lib;sfml-system-s-d.lib;sfml-graphics-s-d.lib;sfml-window-s-d.lib;sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;mysqlcppconn.lib
 
 ;"libcurl_imp.lib"</AdditionalDependencies>

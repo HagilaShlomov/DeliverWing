@@ -177,11 +177,18 @@ Third-party bundle in the repository:
 ### Option 1: Visual Studio
 
 1. Open `Server.sln` in Visual Studio.
-2. Make sure the include directories contain the required libraries:
-   - `curl` headers and libs
-   - MySQL connector headers and libs
-   - `nlohmann/json.hpp`
-3. Build the `Server` project.
+2. Restore NuGet packages (right-click the solution → **Restore NuGet Packages**). This downloads `libcurl-v143-shared` and `nlohmann.json` into `packages/`.
+3. Install the libraries that are not stored in the repository, at the paths the project expects:
+
+   | Library | Expected location | Needed for |
+   |---|---|---|
+   | MySQL Connector/C++ 9.3 | `C:\libraries\mysql-connector-c++-9.3.0-winx64\mysql-connector-c++-9.3.0-winx64\` | All configurations |
+   | GLFW 3.4, SFML 2.6.2, glad | `C:\glfw-3.4.bin.WIN64\…`, `C:\SFML-2.6.2\`, `C:\glad\` | `Debug|x64` only |
+
+   If you install them elsewhere, update the paths under Project Properties → C/C++ → Additional Include Directories and Linker → Additional Library Directories.
+4. Build the `Server` project (`Debug|x64`).
+
+The `curl` headers are bundled in `curl-8.13.0_3-win64-mingw/` and referenced relative to the solution folder, so the repository can be cloned to any location.
 
 ### Option 2: CMake
 
