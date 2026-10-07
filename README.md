@@ -1,8 +1,47 @@
-# Drone Project Server
+# DeliverWing – Drone Delivery Simulation
+
+![DeliverWing](docs/deliverwing-cover.png)
+
+## Highlights
+
+- **Weather-aware path planning** – A* and Dijkstra over a geographic graph, with an edge-cost function that combines distance, wind speed and wind direction (`CostCalculate.h`)
+- **Real-time obstacle rerouting** – simulated LiDAR detects obstacles on the next leg; the blocked edge is removed from the graph and a new A* route is computed mid-flight (`HandleDinamic.h`)
+- **Building-aware altitude** – the drone climbs above buildings in its path with a safety margin
+- **Sensor simulation** – LiDAR, accelerometer, barometer and battery modules
+- **Live 3D visualization** – the drone's path, obstacles and buildings are streamed over UDP to a real-time Matplotlib 3D view
+
+## System Components
+
+| Component | Folder | Tech | Port | Role |
+|---|---|---|---|---|
+| Main server | `Server/` | C++ | 8080 (HTTP) | REST API, path planning, flight simulation |
+| Sensors server | `sensors server/` | Python, Flask | 5000 (HTTP) | Simulated LiDAR obstacles, buildings and barometer readings |
+| 3D visualization | `simulation/` | Python, Matplotlib | 14785 (UDP) | Live 3D view of the drone's path, obstacles and buildings |
+| DAL service | external | – | 8081 (HTTP) | Stores users and orders in MySQL |
+
+```
+Client ──HTTP──▶ C++ Server (8080) ──HTTP──▶ Sensors Server (5000)
+                     │    │
+                     │    └──HTTP──▶ DAL Service (8081) ──▶ MySQL
+                     └──UDP──▶ 3D Visualization (14785)
+```
+
+## Running the Python Components
+
+```bash
+cd "sensors server"
+pip install -r requirements.txt
+python app.py              # starts the sensors server on http://localhost:5000
+
+cd ../simulation
+python ShowGraph.py        # opens the live 3D view and listens on UDP 14785
+```
+
+Start both Python components before the C++ server so the flight can query sensors and stream its position.
 
 ## Overview
 
-This repository contains the server-side implementation for a drone delivery simulation project. The server is built in C++ and exposes a REST API for client login, order submission, path planning, weather retrieval, and integration with a database/DAL layer.
+The C++ server is the core of the project. It contains the server-side implementation for a drone delivery simulation project. The server is built in C++ and exposes a REST API for client login, order submission, path planning, weather retrieval, and integration with a database/DAL layer.
 
 The server uses `cpp-httplib` for HTTP handling, `nlohmann/json` for JSON parsing, `libcurl` for external weather requests, and MySQL connector logic to send user and order data to a DAL backend.
 
@@ -97,7 +136,7 @@ The project depends on the following libraries and tools:
 - `cpp-httplib` (header-only HTTP server/client library)
 - `nlohmann/json` for JSON serialization/parsing
 - MySQL connector/JDBC support for DAL integration (`mysql/jdbc.h` references)
-- Optional: `PCL` and other vendor libraries included in the repository for sensor or point-cloud processing
+- `curl-8.13.0_3-win64-mingw/` is bundled in the repository and referenced by the Visual Studio project; `httplib.h` and `json.hpp` are bundled in `Server/`
 
 ## Project Layout
 
@@ -126,27 +165,30 @@ Server/
   httplib.h
   json.hpp
   packages.config
-  weather_data.json*      # Weather data files and caches
+  weather_data.json       # Weather data cache (numbered runtime caches are git-ignored)
 ```
 
-Additional third-party bundles in the repository:
+Third-party bundle in the repository:
 
-- `cpp-httplib-master/`
-- `curl-8.13.0_3-win64-mingw/`
-- `libxl-4.6.0/`
-- `pcl-master/`
-- `vcpkg/`
+- `curl-8.13.0_3-win64-mingw/` (libcurl headers and libraries used by the weather module)
 
 ## Build Instructions
 
 ### Option 1: Visual Studio
 
 1. Open `Server.sln` in Visual Studio.
-2. Make sure the include directories contain the required libraries:
-   - `curl` headers and libs
-   - MySQL connector headers and libs
-   - `nlohmann/json.hpp`
-3. Build the `Server` project.
+2. Restore NuGet packages (right-click the solution → **Restore NuGet Packages**). This downloads `libcurl-v143-shared` and `nlohmann.json` into `packages/`.
+3. Install the libraries that are not stored in the repository, at the paths the project expects:
+
+   | Library | Expected location | Needed for |
+   |---|---|---|
+   | MySQL Connector/C++ 9.3 | `C:\libraries\mysql-connector-c++-9.3.0-winx64\mysql-connector-c++-9.3.0-winx64\` | All configurations |
+   | GLFW 3.4, SFML 2.6.2, glad | `C:\glfw-3.4.bin.WIN64\…`, `C:\SFML-2.6.2\`, `C:\glad\` | `Debug|x64` only |
+
+   If you install them elsewhere, update the paths under Project Properties → C/C++ → Additional Include Directories and Linker → Additional Library Directories.
+4. Build the `Server` project (`Debug|x64`).
+
+The `curl` headers are bundled in `curl-8.13.0_3-win64-mingw/` and referenced relative to the solution folder, so the repository can be cloned to any location.
 
 ### Option 2: CMake
 
@@ -235,7 +277,7 @@ This request will:
 
 ## Important Notes
 
-- The `/login` handler currently uses a hard-coded credential check for `admin` / `good123`.
+- **Development only:** the `/login` handler uses a hard-coded placeholder credential (`admin` / `good123`) so the simulation can run without the DAL service. A production version would authenticate against the user store with hashed passwords.
 - `registerUserInDB()` sends registration data to `localhost:8081/register`.
 - `sendOrderToDB()` sends order data to `localhost:8081/orders`.
 - The weather module requires a valid weather API key and fetches current weather from an external API endpoint.
