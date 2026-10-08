@@ -169,8 +169,25 @@ void WeatherAPI::toString() const
 }
 
 
+// Reads the WeatherAPI key from the WEATHER_API_KEY environment variable,
+// so the key is never stored in the source code.
+static string readWeatherApiKey() {
+    char* value = nullptr;
+    size_t length = 0;
+    if (_dupenv_s(&value, &length, "WEATHER_API_KEY") != 0 || value == nullptr) {
+        return "";
+    }
+    string key(value);
+    free(value);
+    return key;
+}
+
 json getWeatherInfo(double lat, double lon) {
-    string apikey = "d3f4c60705924bd2b7f83839251305";
+    string apikey = readWeatherApiKey();
+    if (apikey.empty()) {
+        cerr << "WEATHER_API_KEY environment variable is not set." << endl;
+        return json{};
+    }
     string Latitude = to_string(lat);
     string Longitude = to_string(lon);
 

@@ -28,6 +28,18 @@ Web Client (3000) ──HTTP──▶ C++ Server (8080) ──HTTP──▶ Sens
                                 └──UDP──▶ 3D Visualization (14785)
 ```
 
+## Configuration
+
+The C++ server fetches live weather from [WeatherAPI.com](https://www.weatherapi.com/). Create a free API key there and store it in the `WEATHER_API_KEY` environment variable. The key is never stored in the repository.
+
+```powershell
+setx WEATHER_API_KEY "your-api-key"
+```
+
+`setx` applies to newly started programs only, so close and reopen Visual Studio afterwards. To set it for Visual Studio runs only, use Project Properties → Debugging → Environment: `WEATHER_API_KEY=your-api-key` (saved in `Server.vcxproj.user`, which is git-ignored).
+
+If the variable is missing, the server prints `WEATHER_API_KEY environment variable is not set.`
+
 ## Running the System
 
 Start the components in this order, each in its own terminal, so every service is listening before something calls it.
@@ -302,7 +314,7 @@ This request will:
 - **Development only:** the `/login` handler uses a hard-coded placeholder credential (`admin` / `good123`) so the simulation can run without the DAL service. A production version would authenticate against the user store with hashed passwords.
 - `registerUserInDB()` sends registration data to `localhost:8081/register`.
 - `sendOrderToDB()` sends order data to `localhost:8081/orders`.
-- The weather module requires a valid weather API key and fetches current weather from an external API endpoint.
+- The weather module requires a valid WeatherAPI.com key in the `WEATHER_API_KEY` environment variable (see [Configuration](#configuration)).
 - There may be placeholder or development code in the DAL and sensor modules that requires a live backend to work fully.
 
 ## Troubleshooting
@@ -310,7 +322,7 @@ This request will:
 - If the server fails to start, verify the build succeeded and libraries were linked.
 - If `/AddOrder` returns errors, check the JSON payload and ensure `source`/`destination` arrays contain exactly two numeric values.
 - If the DAL calls fail, confirm the DAL service is available on `http://localhost:8081`.
-- If weather requests fail, verify network access and the API key configuration in `Weather.cpp`.
+- If weather requests fail, verify network access and that `WEATHER_API_KEY` is set in the environment Visual Studio was started with.
 
 ---
 
