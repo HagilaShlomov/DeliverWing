@@ -9,35 +9,57 @@
 - **Building-aware altitude** – the drone climbs above buildings in its path with a safety margin
 - **Sensor simulation** – LiDAR, accelerometer, barometer and battery modules
 - **Live 3D visualization** – the drone's path, obstacles and buildings are streamed over UDP to a real-time Matplotlib 3D view
+- **Web client** – React app with login and an order form; the destination is geocoded from the address (OpenStreetMap Nominatim) and shown on a Leaflet map
 
 ## System Components
 
 | Component | Folder | Tech | Port | Role |
 |---|---|---|---|---|
+| Web client | `client/` | React, Leaflet | 3000 (HTTP) | Login and order form with a map of the source and destination |
 | Main server | `Server/` | C++ | 8080 (HTTP) | REST API, path planning, flight simulation |
 | Sensors server | `sensors server/` | Python, Flask | 5000 (HTTP) | Simulated LiDAR obstacles, buildings and barometer readings |
 | 3D visualization | `simulation/` | Python, Matplotlib | 14785 (UDP) | Live 3D view of the drone's path, obstacles and buildings |
 | DAL service | external | – | 8081 (HTTP) | Stores users and orders in MySQL |
 
 ```
-Client ──HTTP──▶ C++ Server (8080) ──HTTP──▶ Sensors Server (5000)
-                     │    │
-                     │    └──HTTP──▶ DAL Service (8081) ──▶ MySQL
-                     └──UDP──▶ 3D Visualization (14785)
+Web Client (3000) ──HTTP──▶ C++ Server (8080) ──HTTP──▶ Sensors Server (5000)
+                                │    │
+                                │    └──HTTP──▶ DAL Service (8081) ──▶ MySQL
+                                └──UDP──▶ 3D Visualization (14785)
 ```
 
-## Running the Python Components
+## Running the System
+
+Start the components in this order, each in its own terminal, so every service is listening before something calls it.
+
+**1. Sensors server**
 
 ```bash
 cd "sensors server"
 pip install -r requirements.txt
-python app.py              # starts the sensors server on http://localhost:5000
+python app.py              # http://localhost:5000
+```
 
-cd ../simulation
+**2. 3D visualization**
+
+```bash
+cd simulation
 python ShowGraph.py        # opens the live 3D view and listens on UDP 14785
 ```
 
-Start both Python components before the C++ server so the flight can query sensors and stream its position.
+**3. C++ server** – open `Server.sln` in Visual Studio, restore NuGet packages and run `Debug|x64` (see [Build Instructions](#build-instructions)). The console prints `Server is running on http://localhost:8080`.
+
+**4. Web client**
+
+```bash
+cd client
+npm install                # first time only
+npm start                  # opens http://localhost:3000
+```
+
+Log in, enter a destination address and submit the order. The flight appears in the 3D view.
+
+> On Windows, if `python` is not recognized, use `py` or the full path to `python.exe`.
 
 ## Overview
 

@@ -375,3 +375,6 @@ cpp-httplib-master/
 # Python
 __pycache__/
 *.pyc
+
+# Editor settings
+.vscode/
